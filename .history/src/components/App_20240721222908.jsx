@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 
 import Ducks from "./Ducks";
@@ -12,22 +12,14 @@ import "./styles/App.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
   const handleRegistration = ({
     username,
     email,
     password,
     confirmPassword,
   }) => {
-    if (password === confirmPassword) {
-      auth.register(username, password, email)
-        .then(() => {
-         navigate("/login");
-        })
-        .catch(console.error);
-    }
-  };
-
+    if (password === confirmPassword) 
+  }
   return (
     <Routes>
       <Route
@@ -70,14 +62,6 @@ function App() {
           ) : (
             <Navigate to="/login" replace />
           )
-        }
-      />
-      <Route
-        path="/register"
-        element={
-          <div className="registerContainer">
-            <Register handleRegistration={handleRegistration} />
-          </div>
         }
       />
     </Routes>

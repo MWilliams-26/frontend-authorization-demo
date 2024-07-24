@@ -28,7 +28,7 @@ const Register = ({ handleRegistration}) => {
     <div className="register">
       <Logo title={"CryptoDucks"} />
       <p className="register__welcome">Please register.</p>
-      <form className="register__form" onSubmit={handleSubmit}>
+      <form className="register__form" onSubmit={handleRegistration(data)}>
         <label htmlFor="username">Username:</label>
         <input
           id="username"

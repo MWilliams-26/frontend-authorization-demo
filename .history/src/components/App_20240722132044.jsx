@@ -22,7 +22,7 @@ function App() {
     if (password === confirmPassword) {
       auth.register(username, password, email)
         .then(() => {
-         navigate("/login");
+         navigat
         })
         .catch(console.error);
     }

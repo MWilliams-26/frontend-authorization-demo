@@ -12,7 +12,7 @@ import "./styles/App.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
+  
   const handleRegistration = ({
     username,
     email,
@@ -22,7 +22,7 @@ function App() {
     if (password === confirmPassword) {
       auth.register(username, password, email)
         .then(() => {
-         navigate("/login");
+         
         })
         .catch(console.error);
     }
