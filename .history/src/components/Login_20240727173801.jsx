@@ -20,7 +20,7 @@ const Login = ({ handleLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin(data);
-  };
+  }
 
   return (
     <div className="login">
@@ -29,7 +29,7 @@ const Login = ({ handleLogin }) => {
         This app contains highly sensitive information. Please sign in or
         register to access CryptoDucks.
       </p>
-      <form className="login__form" onSubmit={handleSubmit}>
+      <form className="login__form">
         <label htmlFor="username">Login:</label>
         <input
           id="username"

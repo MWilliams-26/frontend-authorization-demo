@@ -11,23 +11,8 @@ import * as auth from "../utils/auth";
 import "./styles/App.css";
 
 function App() {
-  const [userData, setUserData] = useState({ username: "", email: ""});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const navigate = useNavigate();
-  
-  const handleLogin = ({ username, password }) => {
-    if (!username || !password) {
-      return;
-    }
-    auth
-      .authorize(username, password)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch(console.error);
-  };
-
   const handleRegistration = ({
     username,
     email,
@@ -37,13 +22,13 @@ function App() {
     if (password === confirmPassword) {
       auth.register(username, password, email)
         .then(() => {
-          navigate("/login");
+         navigate("/login");
         })
         .catch(console.error);
     }
   };
 
-
+  const 
 
   return (
     <Routes>
@@ -67,7 +52,7 @@ function App() {
         path="/login"
         element={
           <div className="loginContainer">
-            <Login handleLogin={handleLogin} />
+            <Login />
           </div>
         }
       />

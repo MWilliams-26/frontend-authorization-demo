@@ -28,21 +28,7 @@ function App() {
       .catch(console.error);
   };
 
-  const handleRegistration = ({
-    username,
-    email,
-    password,
-    confirmPassword,
-  }) => {
-    if (password === confirmPassword) {
-      auth.register(username, password, email)
-        .then(() => {
-          navigate("/login");
-        })
-        .catch(console.error);
-    }
-  };
-
+  
 
 
   return (

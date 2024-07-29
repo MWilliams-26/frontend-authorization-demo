@@ -15,14 +15,5 @@ export const register = (username, password, email) => {
 };
 
 export const authorize = (identifier, password) => {
-    return fetch(`${BASE_URL}/auth/local`, {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ identifier, password }),
-    }).then((res) => {
-        return res.ok? res.json() : Promise.reject(`Error: ${res.status}`);
-    });
-};
+    return fetch(`${BASE_URL}/auth/local`)
+}

@@ -26,3 +26,4 @@ export const authorize = (identifier, password) => {
         return res.ok? res.json() : Promise.reject(`Error: ${res.status}`);
     });
 };
+}
